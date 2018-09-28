@@ -1,0 +1,28 @@
+import connection.py
+import time
+#Task 2
+#Control the state of the robot: start, reset, stop, passive, safe
+def start():
+  connection.write(128)
+
+def reset():
+    connection.write(7)
+
+def stop():
+    connection.write(173)
+
+def safe():
+    connection.write(131)
+
+#sleep function
+def sleep(t=0.015):
+    time.sleep(t)
+
+#read the state of the buttons
+def buttonRead():
+    connection.write((142)+(18))
+    sleep()
+
+#send drive command to set the velocity and the radius
+#def driveCommand(velocity, radius)
+def driveDirect():
